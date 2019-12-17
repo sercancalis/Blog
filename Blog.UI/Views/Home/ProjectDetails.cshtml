@@ -1,0 +1,12 @@
+﻿@model Blog.DAL.Classes.Project
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center">@Model.Subject</h2>
+            <p>
+                @Html.Raw(Model.Content)
+            </p>
+            <p style="float:right">@Model.CreatedDate.ToShortDateString()</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,211 @@
+﻿@model Blog.DAL.Classes.Info
+@{
+    Layout = "~/Views/Shared/_siteLayout.cshtml";
+}
+
+<section id="Anasayfa" class="naked">
+    <div class="fullscreenbanner-container revolution">
+        <div class="fullscreenbanner">
+            <ul>
+                <li data-transition="fade">
+                    <img src="~/Content/Site/style/images/dummy.png" alt="slidebg1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="repeat">
+                    <h1 class="tp-caption caption large sfb" data-x="center" data-y="center" data-voffset="-25" data-speed="900" data-start="1000" data-endspeed="100" data-easing="Sine.easeOut">Merhaba ! Sayfama Hoşgeldiniz</h1>
+                    <div class="tp-caption small tp-fade fadeout tp-resizeme" data-x="center" data-y="center" data-voffset="25" data-speed="100"
+                         data-start="1500"
+                         data-easing="Power4.easeOut"
+                         data-splitin="chars"
+                         data-splitout="chars"
+                         data-elementdelay="0.03"
+                         data-endelementdelay="0"
+                         data-endspeed="100"
+                         data-endeasing="Power1.easeOut"
+                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Back-End Developer</div>
+                    <div class="arrow smooth"><a onclick="Scroll('#Projeler')"><i class="icon-down-open-big"></i></a></div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+        <!-- /.fullscreenbanner -->
+    </div>
+    <!-- /.revolution -->
+</section>
+<!-- /#home -->
+
+<div class="container">
+    <section id="Projeler" class="Projeler">
+        <div class="box">
+            <h2 class="section-title pull-left">Projelerim</h2>
+            <div id="filters-container" class="cbp-l-filters-alignRight pull-right">
+
+                <div data-filter="*" class="cbp-filter-item-custom-active cbp-filter-item-custom btn">
+                    All
+                    <div class="cbp-filter-counter"></div>
+                </div>
+                @foreach (Blog.DAL.Classes.Tag item in ViewBag.Tags)
+                {
+                    if (!item.Name.Contains("Proje") && !item.Name.Contains("Blog"))
+                    {
+                        <div data-filter=".@item.ID" class="cbp-filter-item-custom btn">
+                            @item.Name
+                            <div class="cbp-filter-counter"></div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="clearfix"></div>
+            <div id="grid-container" class="cbp-l-grid-masonry">
+                <ul>
+                    @foreach (Blog.DAL.Classes.Project item in ViewBag.Projects)
+                    {
+                        <li class="cbp-item frame @foreach (var item2 in item.TagDetails.ToList())
+                        {  
+                            @item2.Tag.ID@: 
+                        } ">
+                            <a class="cbp-caption cbp-singlePage" href="/Home/ProjectDetails/@item.ID">
+                                <div class="cbp-caption-defaultWrap"> <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Image))" alt=""> </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-title">@item.Subject</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    }
+</ul>
+</div>
+<!-- /.cbp-l-grid-masonry -->
+<div class="cbp-l-loadMore-button"> <a href="ajax/port1-more.html" class="cbp-l-loadMore-button-link btn">DAHA FAZLA</a> </div>
+</div>
+<!-- /.box -->
+</section>
+<!-- /#portfolio -->
+
+<section id="Hakkımda">
+    <div class="box">
+        <h2 class="section-title">Ben Kimim ? Ne Yaparım ? </h2>
+        <div class="row">
+
+
+            <!-- /column -->
+            <div class="col-12">
+                @Html.Raw(Model.About)
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+        <div class="clearfix"></div>
+        <div class="divide40"></div>
+
+
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /#about -->
+
+<section id="İletişim">
+    <div class="box">
+        <h2 class="section-title">İletişim</h2>
+        <div class="divide20"></div>
+        <div class="row text-center services-2">
+            <div class="col-md-3 col-sm-6">
+                <i class="budicon-map"></i>
+                <p>
+                    @Model.Address
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <i class="budicon-telephone"></i>
+                <p>
+                    @Model.Phone
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <i class="budicon-mobile"></i>
+                <p>
+                    @Model.Phone
+
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <i class="budicon-mail"></i>
+                <p>
+                    <a class="nocolor" href="mailto:@Model.Email1">@Model.Email1</a> <br />
+                    <a class="nocolor" href="mailto:@Model.Email2">@Model.Email2</a>
+                </p>
+            </div>
+        </div>
+        <!-- /.services-2 -->
+        <div class="divide30"></div>
+        <div class="form-container">
+            <div class="response alert alert-success"></div>
+            <form class="forms" action="contact/form-handler.php" method="post">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-row text-input-row name-field">
+                                <label>Ad Soyad</label>
+                                <input type="text" name="name" class="text-input defaultText required" placeholder="Sercan ÇALIŞ" />
+                            </div>
+                            <div class="form-row text-input-row email-field">
+                                <label>Email</label>
+                                <input type="text" name="email" class="text-input defaultText required email" placeholder="info@sercancalis.com" />
+                            </div>
+                            <div class="form-row text-input-row subject-field">
+                                <label>Başlık</label>
+                                <input type="text" name="subject" class="text-input defaultText" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 lp5">
+                            <div class="form-row text-area-row">
+                                <label>Mesaj</label>
+                                <textarea name="message" class="text-area required"></textarea>
+                            </div>
+                            <div class="form-row hidden-row">
+                                <input type="hidden" name="hidden" value="" />
+                            </div>
+                            <div class="nocomment">
+                                <label for="nocomment">Leave This Field Empty</label>
+                                <input id="nocomment" value="" name="nocomment" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="button-row pull-right">
+                                <input type="submit" value="Mesajı Gönder" name="submit" class="btn btn-submit bm0" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 lp5">
+                            <div class="button-row pull-left">
+                                <input type="reset" value="Mesajı Temizle" name="reset" class="btn btn-submit bm0" />
+                            </div>
+                        </div>
+                        <input type="hidden" name="v_error" id="v-error" value="Required" />
+                        <input type="hidden" name="v_email" id="v-email" value="Enter a valid email" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- /.form-container -->
+
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /#contact -->
+
+<footer class="footer box">
+    <p class="pull-left">© @DateTime.Now.Year .Developed By Sercan ÇALIŞ</p>
+    <ul class="social pull-right">
+        <li><a href="@Model.Twitter"><i class="icon-s-twitter"></i></a></li>
+        <li><a href="@Model.Facebook"><i class="icon-s-facebook"></i></a></li>
+        <li><a href="@Model.Instagram"><i class="icon-s-instagram"></i></a></li>
+        <li><a href="@Model.Linkedin"><i class="icon-s-linkedin"></i></a></li>
+        <li><a href="@Model.GitHub"><i class="icon-s-github"></i></a></li>
+    </ul>
+    <div class="clearfix"></div>
+</footer>
+<!-- /footer -->
+
+</div>
+<!-- /.container -->

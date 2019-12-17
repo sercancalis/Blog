@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Blog.DAL.Classes.Project>
+@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@section SelectedList{
+    <script>
+        $('li.item:nth-of-type(3)').addClass("active")
+
+/**/</script>
+}
+
+<div class="container-fluid">
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Projects</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th width="500px">Content</th>
+                        <th width="100px">CreatedAt ModifiedAt</th>
+                        <th width="70px">Tags</th>
+                        <th width="70px">Image</th>
+                        <th width="50px"><a class="btn btn-success" href="@Url.Action("AddProject","Admin")">Add</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Subject</td>
+                            <td>
+                                @if (item.Content.Length > 250)
+                                {
+                                    @Html.Raw(item.Content.Substring(1, 250)) @:...
+                                }
+                                else
+                                {
+                                    @Html.Raw(item.Content)
+                                }
+
+                            </td>
+                            <td> C: @item.CreatedDate.ToString("dd.MM.yyyy") <br /> M: @item.ModifiedDate.ToString("dd.MM.yyyy") </td>
+                            <td>
+                                @foreach (var item2 in item.TagDetails)
+                                {
+                                <label class="btn btn-info btn-xs" style="margin:1px;">@item2.Tag.Name</label>  
+                                }
+                            </td>
+                            <td>
+                                <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Image))" width="70"/>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("UpdateProject","Admin",new { ID = item.ID })"><i class="fa fa-edit fa-lg fa-2x" style="line-height:50px;"></i></a>
+                                <a onclick="DeleteProject(@item.ID)"><i class="fa fa-remove fa-lg fa-2x"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+<script>
+    function DeleteProject(ID) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                $.ajax({
+                    url: "/Admin/DeleteProject",
+                    type: "POST",
+                    data: { ID },
+                    success: function myfunction() {
+                        location.reload();
+                    },
+                    error: function myfunction() {
+
+                    }
+                });
+            }
+        });
+    }
+</script>

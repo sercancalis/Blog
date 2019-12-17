@@ -1,0 +1,40 @@
+﻿@model Blog.DAL.Classes.Info
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row" style="margin-top:10px;">
+        @using (Html.BeginForm("UpdateInfo", "Admin", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(x => x.About)
+            <textarea id="About" name="About" required>@Html.Raw(Model.About)</textarea><br />
+            @Html.LabelFor(x => x.Address)
+            @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })<br />
+            @Html.LabelFor(x => x.Email1)
+            @Html.TextBoxFor(x => x.Email1, new { @class = "form-control" })<br />
+            @Html.LabelFor(x => x.Email2)
+            @Html.TextBoxFor(x => x.Email2, new { @class = "form-control" })<br />
+            @Html.LabelFor(x => x.Phone)
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })<br />
+            @Html.LabelFor(x => x.GitHub)
+            @Html.TextBoxFor(x => x.GitHub, new { @class = "form-control" })<br />
+            @Html.LabelFor(x => x.Facebook)
+            @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control"})<br />
+            @Html.LabelFor(x => x.Twitter)
+            @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control"})<br />
+            @Html.LabelFor(x => x.Instagram)
+            @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control"})<br />
+            @Html.LabelFor(x => x.Linkedin)
+            @Html.TextBoxFor(x => x.Linkedin, new { @class = "form-control"})<br />
+
+            <br />  <br />
+            <button class="btn btn-primary">Update Info</button>
+            <br /><br />
+        }
+
+    </div>
+</div>

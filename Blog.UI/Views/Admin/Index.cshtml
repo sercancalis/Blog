@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+@section SelectedList{
+    <script>
+        $('li.item:nth-of-type(2)').addClass("active")
+    </script>
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Control panel</small>
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>@ViewBag.ProjectCount</h3>
+
+                    <p>Projects</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>@ViewBag.BlogCount</h3>
+
+                    <p>Blogs</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-android-desktop"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>@ViewBag.CommentCount</h3>
+
+                    <p>Comments</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>@ViewBag.Visitors</h3>
+
+                    <p>Total Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-gray-active">
+                <div class="inner">
+                    <h3>@ViewBag.DailyVisitors</h3>
+
+                    <p>Daily Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-social-tux"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-purple">
+                <div class="inner">
+                    <h3>@ViewBag.WeeklyVisitors</h3>
+
+                    <p>Weekly Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-social-freebsd-devil"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-teal-active">
+                <div class="inner">
+                    <h3>@ViewBag.MonthlyVisitors</h3>
+
+                    <p>Monthly Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-social-snapchat"></i>
+                </div>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+    <!-- /.row -->
+
+
+</section>
+<!-- /.content -->

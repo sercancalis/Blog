@@ -1,0 +1,101 @@
+﻿@{ 
+    ViewBag.twitter = new Blog.BLL.Classes.InfoController().GetInfo().Twitter;
+    ViewBag.instagram = new Blog.BLL.Classes.InfoController().GetInfo().Instagram;
+    ViewBag.linkedin = new Blog.BLL.Classes.InfoController().GetInfo().Linkedin;
+    ViewBag.github = new Blog.BLL.Classes.InfoController().GetInfo().GitHub;
+    ViewBag.facebook = new Blog.BLL.Classes.InfoController().GetInfo().Facebook;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    <title>www.sercancalis.com | @DateTime.Now.Year</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/Site/style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Site/style/css/plugins.css" rel="stylesheet">
+    <link href="~/Content/Site/style/css/prettify.css" rel="stylesheet">
+    <link href="~/Content/Site/style.css" rel="stylesheet">
+    <link href="~/Content/Site/style/css/color/green.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="~/Content/Site/style/type/fontello.css" rel="stylesheet">
+    <link href="~/Content/Site/style/type/budicons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+          <script src="style/js/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+          <![endif]-->
+</head>
+<body class="full-layout">
+    <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+    <div class="body-wrapper">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
+                <div class="navbar-brand text-center"> <a href="@Url.Action("Index","Home")"><img src="~/Content/Site/style/images/logo.png" alt="" data-src="/Content/Site/style/images/logo.png" data-ret="~/Content/Site/style/images/logo@2x.png" class="retina" /></a> </div>
+                <!-- /.navbar-brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="current"><a href="#Anasayfa" class="hint--right" data-hint="Anasayfa"><i class="budicon-home-1"></i><span>Anasayfa</span></a></li>
+                    <li><a href="#Projeler" class="hint--right" data-hint="Projeler"><i class="budicon-image"></i><span>Projeler</span></a></li>
+                    <li><a href="#Hakkımda" class="hint--right" data-hint="Hakkımda"><i class="budicon-author"></i><span>Hakkımda</span></a></li>
+                    <li><a href="#İletişim" class="hint--right" data-hint="İletişim"><i class="budicon-profile"></i><span>İletişim</span></a></li>
+                    <li><a href="blog.html" class="hint--right" data-hint="Blog"><i class="budicon-book-1"></i><span>Blog</span></a></li>
+                    <li><a href="#Bağlantılar" class="hint--right fancybox-inline" data-hint="Bağlantılar" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-empty-1"></i><span>Bağlantılar</span></a></li>
+                </ul>
+                <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div id="Bağlantılar" style="display:none;">
+                <h1>Aşağıdaki bağlantıları kullanarak sosyal medyada da beni takip edebilirsiniz</h1>
+                <div class="divide20"></div>
+                <ul class="social">
+                    <li><a href="@ViewBag.twitter"><i class="icon-s-twitter"></i></a></li>
+                    <li><a href="@ViewBag.facebook"><i class="icon-s-facebook"></i></a></li>
+                    <li><a href="@ViewBag.instagram"><i class="icon-s-instagram"></i></a></li>
+                    <li><a href="@ViewBag.linkedin"><i class="icon-s-linkedin"></i></a></li>
+                    <li><a href="@ViewBag.github"><i class="icon-s-github"></i></a></li>
+                </ul>
+            </div>
+            <!-- /#elsewhere -->
+        </nav>
+        <!-- /.navbar -->
+
+        @RenderBody()
+
+    </div>
+    <!-- /.body-wrapper -->
+    <script src="~/Content/Site/style/js/jquery.min.js"></script>
+    <script src="~/Content/Site/style/js/bootstrap.min.js"></script>
+    <script src="~/Content/Site/style/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/Site/style/js/classie.js"></script>
+    <script src="~/Content/Site/style/js/plugins.js"></script>
+    <script src="~/Content/Site/style/js/scripts.js"></script>
+    <div class="video-overlay"></div>
+    <video  id="bgvid" autoplay muted loop>
+        <source src="~/Content/Site/style/video/seattleferryride.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('.navbar ul a[href]').click(function () {
+            $('html,body').animate({
+                scrollTop: ($(this.attributes.getNamedItem("href").value).offset().top)
+            }, 'slow')
+        });
+    });
+
+    function Scroll(divID) {
+        $('html,body').animate({
+            scrollTop: ($(divID).offset().top)
+        }, 'slow')
+    }
+ 
+</script>
