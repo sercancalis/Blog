@@ -1,0 +1,13 @@
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.BLL.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.BLL.pdb
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.DAL.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.DAL.pdb
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.DAL.dll.config
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\EntityFramework.xml
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\obj\Debug\Blog.BLL.csprojAssemblyReference.cache
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\obj\Debug\Blog.BLL.csproj.CoreCompileInputs.cache
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\obj\Debug\Blog.BLL.csproj.CopyComplete
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\obj\Debug\Blog.BLL.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\obj\Debug\Blog.BLL.pdb
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\Blog.BLL.dll.config
+C:\Users\sercan.calis\source\repos\Blog\Blog.BLL\bin\Debug\EntityFramework.SqlServer.xml
