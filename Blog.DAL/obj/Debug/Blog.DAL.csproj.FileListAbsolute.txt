@@ -1,0 +1,12 @@
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\Blog.DAL.dll.config
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\Blog.DAL.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\Blog.DAL.pdb
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\EntityFramework.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\EntityFramework.xml
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\obj\Debug\Blog.DAL.csprojAssemblyReference.cache
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\obj\Debug\Blog.DAL.csproj.CoreCompileInputs.cache
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\obj\Debug\Blog.DAL.csproj.CopyComplete
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\obj\Debug\Blog.DAL.dll
+C:\Users\sercan.calis\source\repos\Blog\Blog.DAL\obj\Debug\Blog.DAL.pdb
