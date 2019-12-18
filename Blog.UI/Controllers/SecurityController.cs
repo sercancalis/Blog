@@ -23,7 +23,7 @@ namespace Blog.UI.Controllers
         [HttpPost]
         public ActionResult Index(string email, string password, bool rememberme)
         {
-            if (email == "sercancalis7@gmail.com" && password == "9sgz4v71a++")
+            if (email == "” && password == "")
             {
                 if (rememberme)
                 {
